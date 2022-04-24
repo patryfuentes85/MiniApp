@@ -14,7 +14,7 @@ const port = 3000
 app.use(express.urlencoded({extended: false}))
 app.use(express.json({extended: false}))
 app.set('view engine', 'pug');
-app.set('views', './public/views');
+app.set('views', './views');
 app.use(express.static('public'));
 
 

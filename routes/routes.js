@@ -3,7 +3,7 @@ const router = express.Router();
 const products = require("../controllers/controllers_products");
 
 
-router.get("miniapi/", products.goHome);
+router.get("/miniapi", products.goHome);
 
 
 router.get('/products/:name?', products.getProducts);
