@@ -7,7 +7,9 @@ router.get("/miniapi", products.goHome);
 
 
 router.get('/products/:name?', products.getProducts);
+router.get('/products/create', products.createProduct);
 router.post('/products/create', products.createProduct);
+
 router.put('/products/edit/:name?', products.editProduct);
 router.delete('/products/delete/:name', products.deleteProduct);
 
