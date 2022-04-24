@@ -1,8 +1,10 @@
+require('dotenv').config();
 const express = require('express')
 const multer = require('multer')
 const firebase = require('./utils/FirebaseConfig')
 const routes = require('./routes/routes')
-require('dotenv').config();
+require('path');
+require('./utils/dbMongo');
 require('Mongodb');
 
 
