@@ -16,7 +16,7 @@ const getProducts = async (req,res) => {
             res.status(200).json(data);
         }else{
             data = await productsEx.find({})
-            res.status(200).json(data)
+            res.render("products.pug", { products: data });
         }
     } catch (error) {
         res.status(400).json({"error":error})
