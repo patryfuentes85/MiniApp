@@ -20,11 +20,17 @@ const getProducts = async (req, res) => {
     res.status(400).json({ error: error });
   }
 };
-
 const createProduct = async (req, res) => {
   try {
+    res.render("create_products.pug");
+  } catch (err) {
+    res.status(400).json({ message: err });
+  }
+};
+const createNewProduct = async (req, res) => {
+  try {
     const newP = req.body;
-    // let data = await productsEx.create(newP);
+    let data = await productsEx.create(newP);
     data = await productsEx.find({});
     res.render("create_products.pug", { products: data });
   } catch (err) {
@@ -56,6 +62,7 @@ const deleteProduct = async (req, res) => {
 };
 
 module.exports = {
+  createNewProduct,
   goHome,
   createProduct,
   getProducts,
