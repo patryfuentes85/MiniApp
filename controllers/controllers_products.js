@@ -2,7 +2,8 @@ const productsEx = require("../models/MongoSchema");
 const { db } = require("../utils/dbMongo");
 
 const goHome = async (req, res) => {
-  res.render("home.pug");
+  let title = "HOME"
+  res.render("home.pug", { page: title });
 };
 
 const getProducts = async (req, res) => {
@@ -14,7 +15,8 @@ const getProducts = async (req, res) => {
       res.status(200).json(data);
     } else {
       data = await productsEx.find({});
-      res.render("products.pug", { products: data });
+      let title = "PRODUCTS"
+      res.render("products.pug", { products: data, page: title });
     }
   } catch (error) {
     res.status(400).json({ error: error });

@@ -7,13 +7,15 @@ html(lang="en")
         title Products
         link(rel="stylesheet", href="/css/style.css")
     body 
+        include ./header.pug
         h1.title Products
-        each val in products
-            setcion.product__container
-                p.product__title= `${val.name}`
-                img.product__img(src=`${val.image}`)
-                p.product__type  Price:
-                p.products__info= `${val.price}`
-                p.product__type  Desciption:
-                p.products__info= `${val.description}`
+        section.main__section
+            each val in products
+                setcion.product__container
+                    p.product__title= `${val.name}`
+                    img.product__img(src=`${val.image}`)
+                    p.product__type  Price:
+                    p.products__info= `${val.price}`
+                    p.product__type  Desciption:
+                    p.products__info= `${val.description}`
 
