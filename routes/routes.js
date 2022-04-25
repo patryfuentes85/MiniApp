@@ -6,8 +6,9 @@ const products = require("../controllers/controllers_products");
 router.get("/miniapi", products.goHome);
 
 
-router.get('/products/:name?', products.getProducts);
-router.get('/create', products.createProduct);
+router.get('/products/get/:name?', products.getProducts);
+router.get('/products/create', products.createProduct);
+router.post('/products/create', products.createNewProduct);
 // router.post('/products/create', products.createProduct);
 
 router.put('/products/edit/:name?', products.editProduct);
