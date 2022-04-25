@@ -5,13 +5,14 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Products
+        link(rel="stylesheet", href="/css/styles.css")
     body 
         h1 Products
         each val in products
-            p.searchone__info= `${val.name}`
-            img.searchone__img(src=`${val.image}`)
-            p.searchone__type  Type:
-            p.searchone__info= `${val.price}`
-            p.searchone__type  Desciption:
-            p.searchone__info= `${val.description}`
+            p.products__info= `${val.name}`
+            img.product__img(src=`${val.image}`)
+            p.product__type  Price:
+            p.products__info= `${val.price}`
+            p.product__type  Desciption:
+            p.products__info= `${val.description}`
 
