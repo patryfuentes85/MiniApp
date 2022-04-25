@@ -1,0 +1,13 @@
+include ./head.pug
+    include ./header.pug
+    main.main_container
+        div.single_product
+            img.single__img(src=`${products.image}`)
+            div.datos
+                p.single__title=`${products.name}`
+                p.single__info= `${products.price} €` 
+                p.single__type  Description:
+                p.single__desc= `${products.description}`
+                a.btn(href=`http://localhost:3000/products`) view all products
+                a.btn(href=`http://localhost:3000/products/edit/${products.name}`) edit this products
+    include ./footer.pug
